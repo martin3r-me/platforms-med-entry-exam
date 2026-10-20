@@ -18,7 +18,6 @@
 namespace Platform\MedEntryExam;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 use Livewire\Livewire;
 use Platform\Core\PlatformCore;
@@ -89,7 +88,7 @@ class MedEntryExamServiceProvider extends ServiceProvider
         if (
             config()->has('med-entry-exam.routing') &&
             config()->has('med-entry-exam.navigation') &&
-            Schema::hasTable('modules')
+            PlatformCore::modulesTableExists()
         ) {
             /**
              * Modul bei PlatformCore registrieren
